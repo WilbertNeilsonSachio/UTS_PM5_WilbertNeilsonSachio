@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">UTS_PM5_WilbertNeilsonSachio</string>
+    <string name="app_name">Welcome to Flag Quiz</string>
+    <string name="easy">Easy</string>
+    <string name="medium">Medium</string>
+    <string name="hard">Hard</string>
+    <string name="expert">Expert</string>
 </resources>
