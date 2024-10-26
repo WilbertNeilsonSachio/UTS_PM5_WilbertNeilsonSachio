@@ -7,6 +7,10 @@ android {
     namespace = "com.example.uts_pm5_wilbertneilsonsachio"
     compileSdk = 34
 
+    buildFeatures {
+        viewBinding=true
+    }
+
     defaultConfig {
         applicationId = "com.example.uts_pm5_wilbertneilsonsachio"
         minSdk = 24

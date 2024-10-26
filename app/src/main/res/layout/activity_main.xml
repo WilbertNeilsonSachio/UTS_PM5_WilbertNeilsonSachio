@@ -9,46 +9,49 @@
 
     <TextView
         android:id="@+id/app_name"
+        style="@style/app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/app_name"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        style="@style/app_name"
-        android:text="@string/app_name"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.27" />
 
     <Button
         android:id="@+id/btnEasy"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/app_name"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="64dp"
+        android:layout_marginTop="196dp"
+        android:text="@string/easy"
         app:layout_constraintEnd_toStartOf="@id/btnMedium"
-        android:text="@string/easy" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_name" />
 
     <Button
         android:id="@+id/btnMedium"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/app_name"
-        app:layout_constraintStart_toEndOf="@id/btnEasy"
+        android:layout_height="64dp"
+        android:layout_marginTop="196dp"
+        android:text="@string/medium"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/medium" />
+        app:layout_constraintStart_toEndOf="@id/btnEasy"
+        app:layout_constraintTop_toBottomOf="@id/app_name" />
 
     <Button
         android:id="@+id/btnHard"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/btnEasy"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="64dp"
+        android:text="@string/hard"
         app:layout_constraintEnd_toStartOf="@id/btnExpert"
-        android:text="@string/hard" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnEasy" />
 
     <Button
         android:id="@+id/btnExpert"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
         app:layout_constraintTop_toBottomOf="@id/btnMedium"
         app:layout_constraintStart_toEndOf="@id/btnHard"
         app:layout_constraintEnd_toEndOf="parent"
