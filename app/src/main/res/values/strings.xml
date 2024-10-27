@@ -7,9 +7,12 @@
 
     <string name="guess_flag">Guess That Flag</string>
 
-    <string name="result_text">You scored %1$d out of %2$d!</string>
     <string name="passed_message">Congratulations! 🎉 You passed with a score of %1$d out of %2$d!</string>
     <string name="failed_message">Oops! 😞 You scored %1$d out of %2$d. Better luck next time!</string>
     <string name="share">Share</string>
     <string name="play_again">Play Again</string>
+
+    <string name="warning_message">Use light mode for the best experience</string>
+    <string name="press_to_continue">Press anywhere to continue</string>
+
 </resources>

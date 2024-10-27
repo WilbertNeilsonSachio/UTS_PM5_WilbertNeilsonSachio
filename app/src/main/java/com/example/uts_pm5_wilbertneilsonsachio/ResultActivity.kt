@@ -26,7 +26,7 @@ class ResultActivity : AppCompatActivity() {
         displayResultMessage(passed, score, totalQuestions)
         playResultSound(passed)
 
-        binding.tvScore.text = getString(R.string.result_text, score, totalQuestions)
+
         binding.btnShare.setOnClickListener {
             shareResult(score, totalQuestions)
         }
