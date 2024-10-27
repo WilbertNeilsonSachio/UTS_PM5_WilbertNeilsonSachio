@@ -1,6 +1,7 @@
 package com.example.uts_pm5_wilbertneilsonsachio
 
 import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -11,36 +12,44 @@ import com.example.uts_pm5_wilbertneilsonsachio.databinding.ActivityResultBindin
 class ResultActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityResultBinding
+    private var mediaPlayer: MediaPlayer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // Initialize View Binding
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Retrieve the score and total number of questions from the Intent
         val score = intent.getIntExtra("score", 0)
         val totalQuestions = intent.getIntExtra("totalQuestions", 0)
+        val passed = intent.getBooleanExtra("passed", false)
 
-        // Display the result in the TextView
+        displayResultMessage(passed, score, totalQuestions)
+        playResultSound(passed)
+
         binding.tvScore.text = getString(R.string.result_text, score, totalQuestions)
-
-        // Set click listener for the Share button
         binding.btnShare.setOnClickListener {
             shareResult(score, totalQuestions)
         }
 
-        // Set click listener for the Play Again button (optional)
         binding.btnPlayAgain.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
-            finish() // Close the ResultActivity
+            finish()
         }
     }
 
-    // Function to share the quiz result via other apps
+    private fun playResultSound(passed: Boolean) {
+        val soundRes = if (passed) R.raw.passed else R.raw.failed
+        mediaPlayer = MediaPlayer.create(this, soundRes)
+        mediaPlayer?.start()
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        mediaPlayer?.release()
+        mediaPlayer = null
+    }
+
     private fun shareResult(score: Int, totalQuestions: Int) {
         val shareIntent = Intent().apply {
             action = Intent.ACTION_SEND
@@ -48,5 +57,14 @@ class ResultActivity : AppCompatActivity() {
             type = "text/plain"
         }
         startActivity(Intent.createChooser(shareIntent, null))
+    }
+
+    private fun displayResultMessage(passed: Boolean, score: Int, totalQuestions: Int) {
+        val message = if (passed) {
+            getString(R.string.passed_message, score, totalQuestions)
+        } else {
+            getString(R.string.failed_message, score, totalQuestions)
+        }
+        binding.tvScore.text = message
     }
 }
