@@ -16,7 +16,6 @@ class LogoSplashActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLogoSplashBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // Use the system splash screen for Android 12+ devices
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             installSplashScreen()
         }
@@ -25,13 +24,13 @@ class LogoSplashActivity : AppCompatActivity() {
         binding = ActivityLogoSplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Apply fade-in animation to the logo
         val fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in)
         binding.logoImage.startAnimation(fadeIn)
 
-        // Set click listener on the entire layout to proceed immediately
+        val blink = AnimationUtils.loadAnimation(this, R.anim.blink)
+        binding.pressToContinueText.startAnimation(blink)
+
         binding.root.setOnClickListener {
-            // Navigate directly to the MainActivity
             startActivity(Intent(this@LogoSplashActivity, MainActivity::class.java))
             finish()
         }

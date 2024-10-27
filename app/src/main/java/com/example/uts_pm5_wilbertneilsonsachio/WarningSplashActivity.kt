@@ -17,7 +17,6 @@ class WarningSplashActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWarningSplashBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        // Use the system splash screen for Android 12+ devices
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             installSplashScreen()
         }
@@ -26,13 +25,13 @@ class WarningSplashActivity : AppCompatActivity() {
         binding = ActivityWarningSplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Apply fade-in animation to the warning message
         val fadeIn = AnimationUtils.loadAnimation(this, R.anim.fade_in)
         binding.warningText.startAnimation(fadeIn)
 
-        // Set click listener on the entire layout to proceed immediately
+        val blink = AnimationUtils.loadAnimation(this, R.anim.blink)
+        binding.pressToContinueText.startAnimation(blink)
+
         binding.root.setOnClickListener {
-            // Navigate directly to the LogoSplashActivity
             startActivity(Intent(this@WarningSplashActivity, LogoSplashActivity::class.java))
             finish()
         }
