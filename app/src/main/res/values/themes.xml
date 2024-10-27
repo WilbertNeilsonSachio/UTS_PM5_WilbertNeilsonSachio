@@ -6,10 +6,30 @@
     <style name="Theme.FlagQuiz.NoActionBar" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Optional: Define any other customizations -->
     </style>
+
+    <style name="btnopt1">
+        <item name="android:backgroundTint">@color/opt1</item>
+    </style>
+    <style name="btnopt2">
+        <item name="android:backgroundTint">@color/opt2</item>
+    </style>
+    <style name="btnopt3">
+        <item name="android:backgroundTint">@color/opt3</item>
+    </style>
+    <style name="btnopt4">
+        <item name="android:backgroundTint">@color/opt4</item>
+    </style>
+
     <style name="app_name">
         <item name="android:textSize">30sp</item>
         <item name="android:paddingTop">50dp</item>
-        <item name="android:paddingBottom">50dp</item>
+        <item name="android:paddingBottom">20dp</item>
     </style>
+    <style name="difficulty">
+        <item name="android:textSize">15sp</item>
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingBottom">15dp</item>
+    </style>
+
     <style name="Theme.UTS_PM5_WilbertNeilsonSachio" parent="Base.Theme.UTS_PM5_WilbertNeilsonSachio" />
 </resources>

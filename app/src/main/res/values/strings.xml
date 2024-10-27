@@ -1,11 +1,13 @@
 <resources>
     <string name="app_name">Welcome to Flag Quiz</string>
+    <string name="difficulty">Choose your difficulty</string>
     <string name="easy">Easy</string>
     <string name="medium">Medium</string>
     <string name="hard">Hard</string>
     <string name="expert">Expert</string>
 
     <string name="guess_flag">Guess That Flag</string>
+    <string name="question_counter">1/10</string>
 
     <string name="passed_message">Congratulations! 🎉 You passed with a score of %1$d out of %2$d!</string>
     <string name="failed_message">Oops! 😞 You scored %1$d out of %2$d. Better luck next time!</string>

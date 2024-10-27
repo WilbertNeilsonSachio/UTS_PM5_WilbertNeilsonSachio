@@ -41,6 +41,8 @@ class QuizActivity : AppCompatActivity() {
             else -> easyQuestions.shuffled()
         }
 
+        binding.progressBar.max = questions.size
+
         loadQuestion()
 
         binding.option1.setOnClickListener { checkAnswer(binding.option1.text.toString()) }
@@ -61,6 +63,10 @@ class QuizActivity : AppCompatActivity() {
         binding.option2.text = shuffledOptions[1]
         binding.option3.text = shuffledOptions[2]
         binding.option4.text = shuffledOptions[3]
+
+        binding.questionCounter.text = "${questionIndex + 1}/${questions.size}"
+
+        binding.progressBar.progress = questionIndex + 1
     }
 
     private fun playSound(isCorrect: Boolean) {

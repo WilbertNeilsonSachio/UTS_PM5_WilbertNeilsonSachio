@@ -5,7 +5,35 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_image"
     tools:context=".QuizActivity">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:progress="0"
+        android:max="100"
+        android:progressTint="@color/opt3"
+        android:background="@drawable/roundbackground"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/questionCounter"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/questionCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/roundbackground"
+        android:text="@string/question_counter"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@id/progressBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/guessFlag"
@@ -35,6 +63,7 @@
         android:layout_width="0dp"
         android:layout_height="64dp"
         android:layout_marginTop="196dp"
+        style="@style/btnopt1"
         app:layout_constraintEnd_toStartOf="@id/option2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/flagImage" />
@@ -44,6 +73,7 @@
         android:layout_width="0dp"
         android:layout_height="64dp"
         android:layout_marginTop="196dp"
+        style="@style/btnopt2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/option1"
         app:layout_constraintTop_toBottomOf="@id/flagImage" />
@@ -52,6 +82,7 @@
         android:id="@+id/option3"
         android:layout_width="0dp"
         android:layout_height="64dp"
+        style="@style/btnopt3"
         app:layout_constraintEnd_toStartOf="@id/option4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/option1" />
@@ -60,6 +91,7 @@
         android:id="@+id/option4"
         android:layout_width="0dp"
         android:layout_height="64dp"
+        style="@style/btnopt4"
         app:layout_constraintTop_toBottomOf="@id/option2"
         app:layout_constraintStart_toEndOf="@id/option3"
         app:layout_constraintEnd_toEndOf="parent" />
