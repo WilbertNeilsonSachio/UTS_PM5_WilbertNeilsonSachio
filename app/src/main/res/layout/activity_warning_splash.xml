@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:text="@string/warning"
             android:textSize="30sp"
-            android:textColor="@android:color/red"
+            android:textColor="@color/red"
             android:layout_marginBottom="16dp" />
 
         <TextView
