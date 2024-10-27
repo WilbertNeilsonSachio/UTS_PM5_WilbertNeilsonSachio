@@ -14,7 +14,8 @@
     <string name="share">Share</string>
     <string name="play_again">Play Again</string>
 
-    <string name="warning_message">Use light mode for the best experience</string>
+    <string name="warning">Warning!</string>
+    <string name="warning_message">This app is designed for those who wants to never touch grass ever again, use it at your own risk. Also, please use light mode for the best experience cause the dev didn't get paid enough for this.</string>
     <string name="press_to_continue">Press anywhere to continue</string>
 
 </resources>
